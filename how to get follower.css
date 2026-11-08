@@ -1,0 +1,160 @@
+
+/* Global settings */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body.r {
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #ffb6e6,
+        #d946ef,
+        #9333ea,
+        #f472b6,
+        #7e22ce
+    );
+    overflow-x: hidden;
+}
+
+/* Main container */
+.n {
+    color: white;
+    width: 90%;
+    max-width: 450px;
+    min-height: 450px;
+    height: auto;
+    margin: 40px auto;
+    padding: 20px 12px;
+    border: 2px solid white;
+    border-radius: 15px;
+
+    background: linear-gradient(
+        135deg,
+        #ff69b4,
+        #d946ef,
+        #9333ea,
+        #ffb6d9
+    );
+    background-size: 300% 300%;
+    animation: colorMove 6s ease infinite;
+}
+
+/* Text section */
+.follow {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.M {
+    margin-bottom: 15px;
+}
+
+.M h4 {
+    margin: 10px !important;
+    font-size: clamp(15px, 4vw, 19px);
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.blue {
+    margin: 15px 0;
+    text-align: center;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Button */
+.A {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.A button {
+    max-width: 100%;
+    padding: 12px 25px;
+    cursor: pointer;
+}
+
+/* Background animation */
+.insta-background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.insta-background span {
+    width: 8%;
+    text-align: center;
+    font-size: clamp(18px, 3vw, 35px);
+    color: rgba(255,255,255,0.28);
+    animation: instaFloat 5s ease-in-out infinite alternate;
+}
+
+.insta-background span:nth-child(even) {
+    animation-delay: -2s;
+    color: rgba(255,220,255,0.4);
+}
+
+@keyframes instaFloat {
+    from {
+        transform: translateY(-12px) rotate(-12deg);
+    }
+    to {
+        transform: translateY(12px) rotate(12deg);
+    }
+}
+
+@keyframes colorMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Keep content above background */
+body > *:not(.insta-background) {
+    position: relative;
+    z-index: 1;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+    .n {
+        width: 92%;
+        max-width: 450px;
+        margin: 25px auto;
+        min-height: 0;
+        padding: 18px 12px;
+    }
+
+    .follow {
+        margin-top: 15px;
+    }
+
+    .A {
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    img {
+        max-width: 90%;
+        height: auto;
+    }
+}
